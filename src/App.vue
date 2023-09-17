@@ -18,7 +18,7 @@
     import FooterDashboard from "./components/FooterDashboard.vue";
     import HeaderDashboard from "./components/HeaderDashboard.vue";
     import LeftMenuDashboard from "./components/LeftMenuDashboard.vue";
-    import { RouterLink, RouterView } from 'vue-router'
+    import { RouterView } from 'vue-router'
 </script>
 <style lang="">
     

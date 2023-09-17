@@ -3,6 +3,7 @@
     <div class="grid grid-rows-1">
         <MenuItem itemmenu="Inicio" routermenu="/"/>
         <MenuItem itemmenu="Comandos" routermenu="/commands"/>
+        <MenuItem itemmenu="Sonidos" routermenu="/sounds"/>
     </div>
     </div>
 </template>
