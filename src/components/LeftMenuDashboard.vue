@@ -5,7 +5,7 @@
 <template lang="">
     <div>
         <h2>Esto es el menu</h2>
-        <div class="text-red-700 text-xl">Hello, from TailwindCSS!</div>
+        <div class="text-blue-700 text-xl">Hello, from TailwindCSS!</div>
     </div>
 </template>
 

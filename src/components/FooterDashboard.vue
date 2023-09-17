@@ -4,7 +4,7 @@
 
 <template lang="">
     <div class="w-100 h-[80px]">
-            <h1>Esto es un header</h1>
+            <h1>Esto es un footer</h1>
     </div>
 </template>
 
