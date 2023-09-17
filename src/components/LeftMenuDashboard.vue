@@ -1,19 +1,26 @@
-<script setup lang="ts">
-
-</script>
-
 <template lang="">
-    <div>
-        <h2>Esto es el menu</h2>
-        <div class="text-blue-700 text-xl">Hello, from TailwindCSS!</div>
+    <div class="h-full bg-[#469128]">
+    <div class="grid grid-rows-1">
+        <MenuItem itemmenu="elemento 1"/>
+        <MenuItem itemmenu="elemento 2"/>
+        <MenuItem itemmenu="elemento 3"/>
+        <MenuItem itemmenu="elemento 4"/>
+        <MenuItem itemmenu="elemento 5"/>
+        <MenuItem itemmenu="elemento 6"/>
+        <MenuItem itemmenu="elemento 7"/>
+        <MenuItem itemmenu="elemento 8"/>
+        <MenuItem itemmenu="elemento 9"/>
+
+    </div>
     </div>
 </template>
 
+<script setup>
+    import MenuItem from "./MenuItem.vue";
+</script>
+    
 <style scoped>
     h2 {
         color: red;
-    }
-    div {
-        background-color: green;
     }
 </style>
