@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div class="h-full bg-[#469128]">
     <div class="grid grid-rows-1">
         <MenuItem itemmenu="Inicio" routermenu="/"/>
