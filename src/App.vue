@@ -6,7 +6,7 @@
       <div class="bg-violet-500 h-full">
           <LeftMenuDashboard/>
       </div>
-      <div class="col-span-5 bg-indigo-400 h-full">
+      <div class="col-span-5 bg-indigo-400 h-full p-10">
           <RouterView/>
       </div>
   </div>
