@@ -4,7 +4,7 @@
         <thead>
           <tr class="bg-[#2c571c] text-white font-bold">
             <th>Comando</th>
-            <th>Contenido</th>
+            <th>Mensaje</th>
             <th>Rol de Usuario</th>
             <th>Acciones</th>
           </tr>
@@ -12,9 +12,9 @@
         <tbody>
           <tr v-for="(command, index) in commmands" :key="index"
               :class="index % 2 === 0 ? 'bg-[#76b65d]' : 'bg-[#2c571c]'"
-              class=" text-white font-bold">
+              class=" text-white">
             <td class="text-center">{{ command.command }}</td>
-            <td class="text-center">{{ command.content }}</td>
+            <td class="text-center">{{ command.message }}</td>
             <td class="text-center">{{ command.userRole }}</td>
             <td class="text-center">
                 <div class="flex justify-center">
@@ -40,9 +40,9 @@
     data() {
       return {
         commmands: [
-          { command: 1, content: 'Usuario 1', userRole: 'usuario1@example.com', actions: 'acciones' },
-          { command: 2, content: 'Usuario 2', userRole: 'usuario1@example.com', actions: 'acciones' },
-          { command: 3, content: 'Usuario 3', userRole: 'usuario1@example.com', actions: 'acciones' },
+          { command: 1, message: 'Usuario 1', userRole: 'usuario1@example.com', actions: 'acciones' },
+          { command: 2, message: 'Usuario 2', userRole: 'usuario1@example.com', actions: 'acciones' },
+          { command: 3, message: 'Usuario 3', userRole: 'usuario1@example.com', actions: 'acciones' },
         ]
       };
     }

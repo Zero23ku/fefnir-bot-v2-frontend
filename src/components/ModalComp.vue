@@ -52,7 +52,7 @@ export default {
 
 <style lang="css" scoped>
     .modal-body {
-        width: 400px;
+        max-width: 500px;
         padding: 20px;
         margin: 100px auto;
         background: white;
