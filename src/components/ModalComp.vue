@@ -11,7 +11,10 @@
                 <div class="modal-body" ref="modal">
                     <slot>Soy un modal vacio :(</slot>
                     <br>
-                    <CustomButton :isCancel="true" @click="closeModal">Cerrar</CustomButton>
+                    <div class="flex justify-center space-x-4 mt-4">
+                        <CustomButton @click="submitCommand">Crear</CustomButton>
+                        <CustomButton :isCancel="true" @click="closeModal">Cancelar</CustomButton>
+                    </div>
                 </div>
             </div>
         </Transition>
@@ -44,6 +47,9 @@ export default {
     },
     methods: {
         closeModal() {
+            this.$emit('close-event', false);
+        },
+        submitCommand() {
             this.$emit('close-event', false);
         }
     }
