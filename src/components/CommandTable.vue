@@ -1,8 +1,8 @@
 <template>
     <div>
-      <table>
+      <table class="w-full">
         <thead>
-          <tr class="bg-[#469128] text-white font-bold">
+          <tr class="bg-[#2c571c] text-white font-bold">
             <th>Comando</th>
             <th>Contenido</th>
             <th>Rol de Usuario</th>
@@ -11,12 +11,21 @@
         </thead>
         <tbody>
           <tr v-for="(command, index) in commmands" :key="index"
-              :class="index % 2 === 0 ? 'bg-[#76b65d]' : 'bg-[#e9c24e]'"
+              :class="index % 2 === 0 ? 'bg-[#76b65d]' : 'bg-[#2c571c]'"
               class=" text-white font-bold">
-            <td>{{ command.command }}</td>
-            <td>{{ command.content }}</td>
-            <td>{{ command.userRole }}</td>
-            <td><font-awesome-icon icon="fa-solid fa-user-secret" /></td>
+            <td class="text-center">{{ command.command }}</td>
+            <td class="text-center">{{ command.content }}</td>
+            <td class="text-center">{{ command.userRole }}</td>
+            <td class="text-center">
+                <div class="flex justify-center">
+                <CustomButton class="mr-[5px]">
+                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                </CustomButton>
+                <CustomButton :isCancel="true">
+                    <font-awesome-icon icon="fa-solid fa-delete-left" />
+                </CustomButton>
+                </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -24,7 +33,10 @@
 </template>
   
 <script>
+  import CustomButton from './CustomButton.vue';
   export default {
+    name: 'CommandTable',
+    components: { CustomButton },
     data() {
       return {
         commmands: [

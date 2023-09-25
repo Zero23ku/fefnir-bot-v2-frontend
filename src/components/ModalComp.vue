@@ -9,7 +9,7 @@
         leave-to-class="opacity-0">
             <div class="backdrop" v-show="show">
                 <div class="modal-body" ref="modal">
-                    <slot>Test</slot>
+                    <slot>Soy un modal vacio :(</slot>
                     <br>
                     <CustomButton :isCancel="true" @click="closeModal">Cerrar</CustomButton>
                 </div>
