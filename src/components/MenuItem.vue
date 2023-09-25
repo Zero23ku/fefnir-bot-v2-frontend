@@ -1,11 +1,11 @@
 <template>
     <RouterLink :to="routermenu" 
-                :class="( routermenu == currentRoute ) ? 'active' : 'bg-[#469128] transition-colors duration-300 hover:bg-[#f3ab27]'"
-                class=" target:bg-blue-600 flex items-center justify-center cursor-pointer text-white font-bold h-[60px]">
+                :class="( routermenu == currentRoute ) ? 'bg-[#f3ab27]' : 'bg-[#469128] transition-colors duration-300 hover:bg-[#f3ab27]'"
+                class="flex items-center justify-center cursor-pointer text-white font-bold h-[60px]">
         <p> {{ itemmenu }}</p>
     </RouterLink>
 </template>
-<script lang="ts">
+<script>
     export default {
         props: {
             itemmenu: String,
@@ -35,8 +35,6 @@
     }
 </script>
 <style>
-    .active {
-        background-color: violet;
-    }
+
     
 </style>

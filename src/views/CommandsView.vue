@@ -1,12 +1,12 @@
 <template>
     <div>
-      <ModalComp :show="showModal">
+      <ModalComp :show="isOpen" @close-event="closeModal">
         <h1>Hola soy un titulo</h1>
         <div>
             <p>soy el cuerpo</p>
         </div>
       </ModalComp>
-      <button @click="toggleModal">Nuevo comando</button>
+      <CustomButton @click="openModal">Nuevo comando</CustomButton>
       <div class="grid grid-cols-1">
         <div>
           <h1>Comandos</h1>
@@ -19,17 +19,13 @@
   </template>
   
   <script>
-  import ModalComp from '../components/ModalComp.vue';
-  import { ref } from 'vue';
+  import ModalComp from '../components/ModalComp.vue'
+  import CustomButton from '../components/CustomButton.vue';
   export default {
     name: 'CommandsView',
-    components: { ModalComp },
+    components: { ModalComp, CustomButton },
     setup() {
-        const showModal = ref(false);
-        function toggleModal() {
-            showModal.value = !showModal.value;
-        };
-        return { showModal, toggleModal };
+
     },
     data() {
       return {

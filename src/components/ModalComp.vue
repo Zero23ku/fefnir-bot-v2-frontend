@@ -7,11 +7,11 @@
         leave-active-class="transition ease-in duration-200 transform"
         leave-from-class="opacity-100"
         leave-to-class="opacity-0">
-            <div class="backdrop" v-show="showModal">
+            <div class="backdrop" v-show="show">
                 <div class="modal-body" ref="modal">
                     <slot>Test</slot>
                     <br>
-                    <button @click="closeModal">Cerrar</button>
+                    <CustomButton :isCancel="true" @click="closeModal">Cerrar</CustomButton>
                 </div>
             </div>
         </Transition>
@@ -19,26 +19,22 @@
 </template>
 
 <script>
-import {ref, watch} from 'vue';
+import { ref } from 'vue';
 import { onClickOutside } from '@vueuse/core';
+import CustomButton from './CustomButton.vue';
 export default {
-    setup (props) {
-        const showModal = ref(false);
+    name: 'ModalComp',
+    emits: ["close-event"],
+    components: { CustomButton },
+    setup (props, context) {
         const modal = ref(null);
-        watch(() => props.show, (show) => {
-            showModal.value = show;
-        });
-
         onClickOutside(modal,() => {
-            if(showModal.value === true) {
-                closeModal();
+            if(props.show === true) {
+                context.emit('close-event', false);
             }
         })
 
-        function closeModal() {
-            showModal.value = false;
-        }
-        return { showModal, closeModal, modal }
+        return { modal }
     },
     props: {
         show: {
@@ -47,7 +43,9 @@ export default {
         }
     },
     methods: {
-        
+        closeModal() {
+            this.$emit('close-event', false);
+        }
     }
 }
 </script>
